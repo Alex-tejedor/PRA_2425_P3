@@ -33,6 +33,16 @@ class TableEntry {
             return te1.key != te2.key;
         }
 
+        // Sobrecarga operador <
+        friend bool operator<(const TableEntry<V> &te1, const TableEntry<V> &te2) {
+            return te1.key < te2.key;
+        }
+
+        // Sobrecarga operador >
+        friend bool operator>(const TableEntry<V> &te1, const TableEntry<V> &te2) {
+            return te1.key > te2.key;
+        }
+
         // Operador para imprimir
         friend std::ostream& operator<<(std::ostream &out, const TableEntry<V> &te) {
             out << "('" << te.key << "' => " << te.value << ")";
